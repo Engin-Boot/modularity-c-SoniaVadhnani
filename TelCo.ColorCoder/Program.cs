@@ -1,25 +1,22 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Drawing;
+using System.Runtime.InteropServices;
 
 namespace TelCo.ColorCoder
-{
-    /// <summary>
-    /// The 25-pair color code, originally known as even-count color code, 
+{   /// The 25-pair color code, originally known as even-count color code, 
     /// is a color code used to identify individual conductors in twisted-pair 
     /// wiring for telecommunications.
     /// This class provides the color coding and 
     /// mapping of pair number to color and color to pair number.
-    /// </summary>
     class Program
-    {
-        
-        /// <summary>
-        /// Test code for the class
+    {   /// Test code for the class
         /// </summary>
         /// <param name="args"></param>
         private static void Main(string[] args)
         {
+            ReferenceManual manual = new ReferenceManual();
+            Console.WriteLine(manual.ToString());
             int pairNumber = 4;
             ColorPair testPair1 = NumToColor.GetColorFromPairNumber(pairNumber);
             Console.WriteLine("[In]Pair Number: {0},[Out] Colors: {1}\n", pairNumber, testPair1);
